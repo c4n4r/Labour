@@ -1,0 +1,28 @@
+{
+    "name": "c4n4r/labour",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "C4n4r\\Labour\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "c4n4r",
+            "email": "delphin.hadrien@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "pestphp/pest": "^2.20"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require": {
+        "symfony/var-dumper": "^6.3",
+        "guzzlehttp/guzzle": "^7.8"
+    }
+}

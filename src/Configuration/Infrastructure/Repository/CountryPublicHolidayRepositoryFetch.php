@@ -1,0 +1,49 @@
+<?php
+
+namespace C4n4r\Labour\Configuration\Infrastructure\Repository;
+
+use C4n4r\Labour\Configuration\Domain\Model\PublicHoliday;
+use C4n4r\Labour\Configuration\Domain\Repository\CountryPublicHolidayRepository;
+use DateTime;
+use GuzzleHttp\Client;
+
+class CountryPublicHolidayRepositoryFetch implements CountryPublicHolidayRepository
+{
+
+    private Client $httpClient;
+    public function __construct()
+    {
+        $this->httpClient = new Client(
+            [
+                'base_uri' => 'https://date.nager.at/api/v3/publicholidays/'
+            ]
+        );
+    }
+
+    /**
+     * @param string $countryCode
+     * @param int $year
+     * @return PublicHoliday[]
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getPublicHolidaysPerYear(string $countryCode, int $year): array
+    {
+
+        $response = $this->httpClient->request(
+            'GET',
+            $year . '/' . $countryCode
+        );
+
+        $publicHolidays = [];
+        $data = json_decode($response->getBody()->getContents(), true);
+        foreach ($data as $publicHoliday) {
+            $publicHolidays[] = new PublicHoliday(
+                $publicHoliday['name'],
+                $publicHoliday['localName'],
+                new DateTime($publicHoliday['date'])
+            );
+        }
+        return $publicHolidays;
+
+    }
+}

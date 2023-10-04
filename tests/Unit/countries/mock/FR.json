@@ -1,0 +1,147 @@
+{
+  "2023" : [
+    {
+      "date": "2023-01-01",
+      "localLabel": "Jour de l'an",
+      "label": "New Year's Day",
+      "countryCode": "FR",
+      "fixed": true,
+      "global": true,
+      "counties": null,
+      "launchYear": 1967,
+      "types": [
+        "Public"
+      ]
+    },
+    {
+      "date": "2023-04-10",
+      "localLabel": "Lundi de P\u00E2ques",
+      "label": "Easter Monday",
+      "countryCode": "FR",
+      "fixed": false,
+      "global": true,
+      "counties": null,
+      "launchYear": 1642,
+      "types": [
+        "Public"
+      ]
+    },
+    {
+      "date": "2023-05-01",
+      "localLabel": "F\u00EAte du Travail",
+      "label": "Labour Day",
+      "countryCode": "FR",
+      "fixed": true,
+      "global": true,
+      "counties": null,
+      "launchYear": null,
+      "types": [
+        "Public"
+      ]
+    },
+    {
+      "date": "2023-05-08",
+      "localLabel": "Victoire 1945",
+      "label": "Victory in Europe Day",
+      "countryCode": "FR",
+      "fixed": true,
+      "global": true,
+      "counties": null,
+      "launchYear": null,
+      "types": [
+        "Public"
+      ]
+    },
+    {
+      "date": "2023-05-18",
+      "localLabel": "Ascension",
+      "label": "Ascension Day",
+      "countryCode": "FR",
+      "fixed": false,
+      "global": true,
+      "counties": null,
+      "launchYear": null,
+      "types": [
+        "Public"
+      ]
+    },
+    {
+      "date": "2023-05-29",
+      "localLabel": "Lundi de Pentec\u00F4te",
+      "label": "Whit Monday",
+      "countryCode": "FR",
+      "fixed": false,
+      "global": true,
+      "counties": null,
+      "launchYear": null,
+      "types": [
+        "Public"
+      ]
+    },
+    {
+      "date": "2023-07-14",
+      "localLabel": "F\u00EAte nationale",
+      "label": "Bastille Day",
+      "countryCode": "FR",
+      "fixed": true,
+      "global": true,
+      "counties": null,
+      "launchYear": null,
+      "types": [
+        "Public"
+      ]
+    },
+    {
+      "date": "2023-08-15",
+      "localLabel": "Assomption",
+      "label": "Assumption Day",
+      "countryCode": "FR",
+      "fixed": true,
+      "global": true,
+      "counties": null,
+      "launchYear": null,
+      "types": [
+        "Public"
+      ]
+    },
+    {
+      "date": "2023-11-01",
+      "localLabel": "Toussaint",
+      "label": "All Saints' Day",
+      "countryCode": "FR",
+      "fixed": true,
+      "global": true,
+      "counties": null,
+      "launchYear": null,
+      "types": [
+        "Public"
+      ]
+    },
+    {
+      "date": "2023-11-11",
+      "localLabel": "Armistice 1918",
+      "label": "Armistice Day",
+      "countryCode": "FR",
+      "fixed": true,
+      "global": true,
+      "counties": null,
+      "launchYear": null,
+      "types": [
+        "Public"
+      ]
+    },
+    {
+      "date": "2023-12-25",
+      "localLabel": "No\u00EBl",
+      "label": "Christmas Day",
+      "countryCode": "FR",
+      "fixed": true,
+      "global": true,
+      "counties": null,
+      "launchYear": null,
+      "types": [
+        "Public"
+      ]
+    }
+  ]
+}
