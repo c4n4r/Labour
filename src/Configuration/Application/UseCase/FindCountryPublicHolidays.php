@@ -4,18 +4,22 @@ namespace C4n4r\Labour\Configuration\Application\UseCase;
 
 use C4n4r\Labour\Configuration\Domain\Exceptions\NoCountryFileException;
 use C4n4r\Labour\Configuration\Domain\Model\Country;
+use C4n4r\Labour\Configuration\Domain\Repository\CountryPublicHolidayRepository;
+use C4n4r\Labour\Configuration\Infrastructure\Factory\CountryPublicHolidayRepositoryFactory;
 use C4n4r\Labour\Configuration\Infrastructure\Repository\CountryPublicHolidayRepositoryFetch;
 use C4n4r\Labour\Configuration\Infrastructure\Repository\CountryPublicHolidayRepositoryFS;
 use function array_map;
 
-class FindCountryPublicHolidays
+readonly class FindCountryPublicHolidays
 {
 
-    public function __construct(
-        private readonly CountryPublicHolidayRepositoryFS $countryPublicHolidayRepositoryFS,
-        private readonly CountryPublicHolidayRepositoryFetch $countryPublicHolidayRepositoryFetch
-    )
+    private CountryPublicHolidayRepository $fsRepository;
+    private CountryPublicHolidayRepository $fetchRepository;
+
+    public function __construct()
     {
+        $this->fsRepository = CountryPublicHolidayRepositoryFactory::create('file');
+        $this->fetchRepository = CountryPublicHolidayRepositoryFactory::create('api');
     }
 
 
@@ -23,11 +27,11 @@ class FindCountryPublicHolidays
     {
 
         try {
-            $holidays = $this->countryPublicHolidayRepositoryFS->getPublicHolidaysPerYear(
+            $holidays = $this->fsRepository->getPublicHolidaysPerYear(
                 $input->countryCode, $input->year
             );
         } catch (NoCountryFileException $exception) {
-            $holidays = $this->countryPublicHolidayRepositoryFetch->getPublicHolidaysPerYear(
+            $holidays = $this->fetchRepository->getPublicHolidaysPerYear(
                 $input->countryCode, $input->year
             );
             $data = [];

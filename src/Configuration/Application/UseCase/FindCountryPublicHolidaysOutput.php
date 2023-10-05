@@ -9,8 +9,6 @@ class FindCountryPublicHolidaysOutput
 
     public function __construct(
         public Country $country
-    )
-    {
-    }
+    ){}
 
 }
